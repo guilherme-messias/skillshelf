@@ -1,0 +1,128 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f7f8fa;
+    padding: 24px 12px;
+}
+.logoArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.slogan {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 8px;
+    font-weight: 500;
+    text-align: center;
+}
+.form {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 24px 18px;
+    margin-bottom: 32px;
+}
+.input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    outline: none;
+}
+.primaryButton {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+.primaryButton:hover {
+    background: #2563eb;
+}
+.socialLogin {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 8px 0;
+}
+.socialButton {
+    flex: 1;
+    background: #f3f4f6;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.socialButton:hover {
+    background: #e0e7ef;
+}
+.createAccount {
+    text-align: center;
+    color: #3b82f6;
+    font-size: 0.98rem;
+    text-decoration: underline;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.onboarding {
+    width: 100%;
+    max-width: 340px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.onboardingStep {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.stepNumber {
+    font-size: 0.95rem;
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+.onboardingNav {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.onboardingButton {
+    background: #f3f4f6;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.onboardingButton:disabled {
+    background: #e0e0e0;
+    color: #aaa;
+    cursor: not-allowed;
+}
