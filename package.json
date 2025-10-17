@@ -1,0 +1,15 @@
+{
+    "name": "skillshelf",
+    "version": "1.0.0",
+    "description": "Frontend PHP com ESLint e TailwindCSS",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "eslint": "^9.0.0"
+    },
+    "dependencies": {
+        "tailwindcss": "^4.0.0"
+    }
+}
