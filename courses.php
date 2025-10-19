@@ -5,7 +5,7 @@ $courses = [
         "title" => "React Avançado",
         "platform" => "Udemy",
         "tag" => "Frontend",
-        "thumbnail" => "/react-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=1",
         "progress" => 80,
     ],
     [
@@ -13,7 +13,7 @@ $courses = [
         "title" => "UX Design Essencial",
         "platform" => "Alura",
         "tag" => "UX",
-        "thumbnail" => "/ux-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=2",
         "progress" => 45,
     ],
     [
@@ -21,7 +21,7 @@ $courses = [
         "title" => "Inglês para Programadores",
         "platform" => "YouTube",
         "tag" => "Inglês",
-        "thumbnail" => "/english-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=3",
         "progress" => 60,
     ],
     [
@@ -29,7 +29,7 @@ $courses = [
         "title" => "Node.js Completo",
         "platform" => "Udemy",
         "tag" => "Backend",
-        "thumbnail" => "/node-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=4",
         "progress" => 30,
     ],
     [
@@ -37,7 +37,7 @@ $courses = [
         "title" => "Figma do Zero",
         "platform" => "Alura",
         "tag" => "Design",
-        "thumbnail" => "/figma-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=5",
         "progress" => 90,
     ],
     [
@@ -45,7 +45,7 @@ $courses = [
         "title" => "TypeScript Masterclass",
         "platform" => "Udemy",
         "tag" => "Frontend",
-        "thumbnail" => "/ts-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=6",
         "progress" => 10,
     ],
     [
@@ -53,7 +53,7 @@ $courses = [
         "title" => "Banco de Dados SQL",
         "platform" => "Alura",
         "tag" => "Banco de Dados",
-        "thumbnail" => "/sql-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=7",
         "progress" => 55,
     ],
     [
@@ -61,7 +61,7 @@ $courses = [
         "title" => "Docker para Iniciantes",
         "platform" => "YouTube",
         "tag" => "DevOps",
-        "thumbnail" => "/docker-course.jpg",
+        "thumbnail" => "https://picsum.photos/400/240?random=8",
         "progress" => 20,
     ],
 ];
