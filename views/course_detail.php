@@ -27,93 +27,35 @@ $course = array_pop(array_filter($courses, fn($c) => $c["id"] == $id));
               <p class="text-sm opacity-90"><?= $course["platform"] ?? "Plataforma" ?></p>
               <div class="mt-2 flex items-center gap-2 text-sm">
                 <span class="inline-block bg-white/20 px-2 py-1 rounded-full">Tags: <?= $course["tag"] ?></span>
-                <span class="inline-block bg-white/20 px-2 py-1 rounded-full">Progresso: <?= $course["progress"] ?>%</span>
+                <span class="inline-block bg-white/20 px-2 py-1 rounded-full">Progresso: <?= $course[
+                    "progress"
+                ] ?>%</span>
               </div>
             </div>
             <div class="flex gap-2">
-              <a href="<?= $course["external"] ?? "#" ?>" target="_blank" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-md text-sm">Abrir na Udemy</a>
-              <a href="<?= $course["youtube"] ?? "#" ?>" target="_blank" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-md text-sm">Ver playlist no YouTube</a>
               <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-md text-sm">Editar informações</button>
             </div>
           </div>
         </div>
       </header>
 
-      <!-- Conteúdo principal com abas -->
       <section class="bg-white rounded-xl shadow p-4">
-        <nav class="border-b mb-4">
-          <ul class="flex gap-4 text-sm">
-            <li class="pb-2 border-b-2 border-indigo-600">Progresso</li>
-            <li class="pb-2 text-gray-400">Informações</li>
-            <li class="pb-2 text-gray-400">Recursos</li>
-          </ul>
-        </nav>
-
-        <!-- Aba Progresso -->
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <div>
               <h2 class="text-lg font-semibold">Progresso</h2>
-              <p class="text-sm text-gray-500">Atualize seu progresso manualmente ou use os botões rápidos.</p>
+              <p class="text-sm text-gray-500">Atualize seu progresso:</p>
             </div>
             <div class="text-sm text-gray-600">Atual: <strong><?= $course["progress"] ?>%</strong></div>
           </div>
 
-          <!-- Slider -> controle visual apenas (precisa JS para funcionar) -->
           <div class="space-y-2">
-            <input type="range" min="0" max="100" value="<?= $course["progress"] ?>" id="progressRange" class="w-full h-2 bg-gray-200 rounded-lg appearance-none accent-indigo-600" />
+            <input type="range" min="0" max="100" value="<?= $course[
+                "progress"
+            ] ?>" id="progressRange" class="w-full h-2 bg-gray-200 rounded-lg appearance-none accent-indigo-600" />
             <div class="w-full bg-gray-200 h-2 rounded overflow-hidden">
               <div id="progressBar" class="bg-indigo-600 h-2" ></div>
             </div>
-            <div class="flex gap-2">
-              <button data-add="10" class="add-btn bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded">+10%</button>
-              <button data-add="25" class="add-btn bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded">+25%</button>
-              <button data-add="100" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded">Concluir</button>
-            </div>
-          </div>
 
-          <!-- Histórico -->
-          <div>
-            <h3 class="text-sm font-medium mb-2">Histórico</h3>
-            <ul id="history" class="text-sm text-gray-600 space-y-2">
-              <li>Progresso inicial: <?= $progress ?>% — <?= date("d/m/Y") ?></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      // Scripts mínimos para atualizar UI (não persistente)
-      const range = document.getElementById('progressRange');
-      const bar = document.getElementById('progressBar');
-      const history = document.getElementById('history');
-
-      function pushHistory(text) {
-        const li = document.createElement('li');
-        li.textContent = text + ' — ' + new Date().toLocaleDateString();
-        history.prepend(li);
-      }
-
-      range.addEventListener('input', (e) => {
-        bar.style.width = e.target.value + '%';
-      });
-
-      document.querySelectorAll('.add-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const add = parseInt(btn.getAttribute('data-add'), 10);
-          let v = Math.min(100, parseInt(range.value, 10) + add);
-          range.value = v;
-          bar.style.width = v + '%';
-          pushHistory('Progresso atualizado para ' + v + '%');
-        });
-      });
-
-      document.querySelector('[data-add="100"]').addEventListener('click', () => {
-        range.value = 100;
-        bar.style.width = '100%';
-        pushHistory('Curso marcado como concluído (100%)');
-      });
-    </script>
   </body>
 </html>
