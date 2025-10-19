@@ -56,6 +56,9 @@ $course = array_pop(array_filter($courses, fn($c) => $c["id"] == $id));
             <div class="w-full bg-gray-200 h-2 rounded overflow-hidden">
               <div id="progressBar" class="bg-indigo-600 h-2" ></div>
             </div>
-
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
