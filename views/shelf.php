@@ -1,3 +1,7 @@
+<?php
+require __DIR__ . "./../courses.php"; ?>
+
+
 <!doctype html>
 <html lang="pt-br">
     <head>
@@ -114,109 +118,6 @@
                             </div>
                         </article>
 
-                        <article class="min-w-[220px] bg-white rounded-xl shadow-sm overflow-hidden">
-                            <div class="relative">
-                                <img
-                                    src="https://picsum.photos/400/240?random=2"
-                                    alt="Outro curso"
-                                    class="w-full h-36 object-cover"
-                                />
-                                <div
-                                    class="absolute top-2 left-2 flex items-center gap-2 bg-white/80 rounded-full px-2 py-1 text-xs"
-                                >
-                                    <img src="https://simpleicons.org/icons/udemy.svg" alt="Udemy" class="w-4 h-4" />
-                                    <span class="text-gray-700">Udemy</span>
-                                </div>
-                            </div>
-
-                            <div class="p-3">
-                                <h3 class="text-sm font-semibold text-gray-800 line-clamp-2">
-                                    Design de Interfaces: do básico ao avançado
-                                </h3>
-                                <div class="mt-2 flex items-center justify-between">
-                                    <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">UX</span>
-                                    <span class="text-xs text-gray-500">78%</span>
-                                </div>
-
-                                <div class="mt-3">
-                                    <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                        <div class="h-2 bg-indigo-500 rounded-full" style="width: 78%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-3 flex items-center gap-2">
-                                    <button
-                                        class="flex-1 text-xs text-center bg-white border border-gray-200 rounded-md px-2 py-2 hover:bg-gray-50"
-                                    >
-                                        📝 Notas
-                                    </button>
-                                    <button
-                                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 rounded-md hover:bg-gray-50"
-                                    >
-                                        ⏱
-                                    </button>
-                                    <button
-                                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 rounded-md hover:bg-gray-50"
-                                    >
-                                        🏷
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="min-w-[220px] bg-white rounded-xl shadow-sm overflow-hidden">
-                            <div class="relative">
-                                <img
-                                    src="https://picsum.photos/400/240?random=3"
-                                    alt="Terceiro curso"
-                                    class="w-full h-36 object-cover"
-                                />
-                                <div
-                                    class="absolute top-2 left-2 flex items-center gap-2 bg-white/80 rounded-full px-2 py-1 text-xs"
-                                >
-                                    <img
-                                        src="https://simpleicons.org/icons/coursera.svg"
-                                        alt="Coursera"
-                                        class="w-4 h-4"
-                                    />
-                                    <span class="text-gray-700">Coursera</span>
-                                </div>
-                            </div>
-
-                            <div class="p-3">
-                                <h3 class="text-sm font-semibold text-gray-800 line-clamp-2">
-                                    Inglês para desenvolvedores
-                                </h3>
-                                <div class="mt-2 flex items-center justify-between">
-                                    <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">Inglês</span>
-                                    <span class="text-xs text-gray-500">12%</span>
-                                </div>
-
-                                <div class="mt-3">
-                                    <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                        <div class="h-2 bg-indigo-500 rounded-full" style="width: 12%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-3 flex items-center gap-2">
-                                    <button
-                                        class="flex-1 text-xs text-center bg-white border border-gray-200 rounded-md px-2 py-2 hover:bg-gray-50"
-                                    >
-                                        📝 Notas
-                                    </button>
-                                    <button
-                                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 rounded-md hover:bg-gray-50"
-                                    >
-                                        ⏱
-                                    </button>
-                                    <button
-                                        class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 rounded-md hover:bg-gray-50"
-                                    >
-                                        🏷
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
                     </div>
                 </div>
             </section>
