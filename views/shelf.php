@@ -66,31 +66,35 @@ require __DIR__ . "./../courses.php"; ?>
                         <article class="min-w-[220px] bg-white rounded-xl shadow-sm overflow-hidden">
                             <div class="relative">
                                 <img
-                                    src="<?= $course['thumbnail'] ?>"
+                                    src="<?= $course["thumbnail"] ?>"
                                     alt="Título do curso"
                                     class="w-full h-36 object-cover"
                                 />
                                 <div
                                     class="absolute top-2 left-2 flex items-center gap-2 bg-white/80 rounded-full px-2 py-1 text-xs"
                                 >
-                                    <span class="text-gray-700"><?= $course['platform'] ?></span>
+                                    <span class="text-gray-700"><?= $course["platform"] ?></span>
                                 </div>
                             </div>
 
                             <div class="p-3">
                                 <h3 class="text-sm font-semibold text-gray-800 line-clamp-2">
-                                    <?= $course['title'] ?>
+                                    <a href="/course_detail.php?id=<?= $course[
+                                        "id"
+                                    ] ?>" class="text-gray-800"><?= $course["title"] ?></a>
                                 </h3>
                                 <div class="mt-2 flex items-center justify-between">
                                     <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
-                                        ><?= $course['tag'] ?></span
+                                        ><?= $course["tag"] ?></span
                                     >
-                                    <span class="text-xs text-gray-500"><?= $course['progress'] ?>%</span>
+                                    <span class="text-xs text-gray-500"><?= $course["progress"] ?>%</span>
                                 </div>
 
                                 <div class="mt-3">
                                     <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                        <div class="h-2 bg-indigo-500 rounded-full" style="width: <?= $course['progress'] ?>%"></div>
+                                        <div class="h-2 bg-indigo-500 rounded-full" style="width: <?= $course[
+                                            "progress"
+                                        ] ?>%"></div>
                                     </div>
                                 </div>
 
