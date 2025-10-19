@@ -11,20 +11,14 @@
     <div class="max-w-xl mx-auto">
       <header class="flex items-center justify-between mb-6">
         <div class="flex items-center gap-3">
-          <img src="https://i.pravatar.cc/48?img=5" alt="perfil" class="w-12 h-12 rounded-full ring-2 ring-indigo-500" />
+          <img src="https://i.pravatar.cc/48?img=6" alt="perfil" class="w-12 h-12 rounded-full ring-2 ring-indigo-500" />
           <div>
             <p class="text-sm text-gray-500">Bom dia,</p>
-            <p class="text-lg font-semibold text-gray-800">Guilherme <span class="">👋</span></p>
+            <p class="text-lg font-semibold text-gray-800">Guilherme <span>👋</span></p>
           </div>
         </div>
-        <button class="p-2 bg-white rounded-lg shadow-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M9 3v18" />
-          </svg>
-        </button>
       </header>
 
-      <!-- Search -->
       <div class="mb-6">
         <label for="global-search" class="sr-only">Buscar</label>
         <div class="flex items-center bg-white rounded-lg shadow-sm px-3 py-2">
@@ -35,7 +29,6 @@
         </div>
       </div>
 
-      <!-- Widgets -->
       <section class="grid grid-cols-2 gap-3 mb-6">
         <div class="bg-white rounded-xl p-4 shadow-sm">
           <p class="text-xs text-gray-500">Cursos em andamento</p>
@@ -72,7 +65,6 @@
         </div>
       </section>
 
-      <!-- Gráfico simples (barras horizontais) -->
       <section class="bg-white rounded-xl p-4 shadow-sm mb-6">
         <div class="flex items-center justify-between mb-3">
           <h3 class="text-sm font-semibold text-gray-800">Distribuição por tags</h3>
@@ -114,7 +106,6 @@
         </div>
       </section>
 
-      <!-- Atividade recente -->
       <section class="bg-white rounded-xl p-4 shadow-sm">
         <div class="flex items-center justify-between mb-3">
           <h3 class="text-sm font-semibold text-gray-800">Atividade recente</h3>
