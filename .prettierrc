@@ -1,0 +1,9 @@
+{
+    "tabWidth": 4,
+    "printWidth": 120,
+    "singleQuote": false,
+    "trailingComma": "all",
+    "phpVersion": "8.2",
+    "braceStyle": "1tbs",
+    "plugins": ["@prettier/plugin-php"]
+}
