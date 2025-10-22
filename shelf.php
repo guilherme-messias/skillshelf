@@ -1,4 +1,5 @@
 <?php
-require "courses.php";
-require "views/template/shelf.view.php";
+$controller = "shelf";
+
+require "controllers/" . $controller . ".controller.php";
 ?>

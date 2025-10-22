@@ -3,5 +3,5 @@ require "courses.php";
 
 $view = "index";
 
-require "views/template/app/index.view.php";
+require "views/template/app/{$view}.view.php";
 ?>
