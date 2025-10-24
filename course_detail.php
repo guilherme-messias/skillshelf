@@ -1,9 +1,7 @@
 <?php
-require "courses.php";
 
-$id = $_GET["id"] ?? 1;
+$controller = "course_detail";
 
-$course = array_pop(array_filter($courses, fn($c) => $c["id"] == $id));
+require "controllers/" . $controller . ".controller.php";
 
-include "views/template/course_detail.view.php";
 ?>
