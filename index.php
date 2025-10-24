@@ -1,5 +1,3 @@
 <?php
-$controller = "index";
-
-require "controllers/" . $controller . ".controller.php";
+require "routes.php";
 ?>
