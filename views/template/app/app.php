@@ -7,6 +7,6 @@
     <title>Skillshelf</title>
   </head>
   <body>
-      <?php require "views/template/{$view}.view.php" ?>
+      <?php require __DIR__ . "/views/template/{$view}.view.php" ?>
   </body>
 </html>

@@ -8,6 +8,6 @@ $course = array_pop(array_filter($courses, fn($c) => $c["id"] == $id));
 
 $view = "course_detail";
 
-require "views/template/{$view}.view.php";
+require "views/template/app/app.php";
 
 ?>
