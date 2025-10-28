@@ -53,7 +53,7 @@
                 <article class="min-w-[220px] bg-white rounded-xl shadow-sm overflow-hidden">
                     <div class="relative">
                         <img
-                            src="<?= $content_item["thumbnail"] ?>"
+                            src="<?= $content_item["url"] ?>"
                             alt="Título do curso"
                             class="w-full h-36 object-cover"
                         />
