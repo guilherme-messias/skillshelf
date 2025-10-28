@@ -1,9 +1,15 @@
 <?php
 
-$database = new PDO("sqlite:courses.sqlite");
+class DB {
+    public function content_items() {
+        $database = new PDO("sqlite:courses.sqlite");
 
-$query = $database->query("SELECT * FROM content_items");
-$courses = $query->fetchAll();
+        $query = $database->query("SELECT * FROM content_items");
+        $content_items = $query->fetchAll();
+
+        return $content_items;
+    }
+}
 
 // $courses = [
 //     [

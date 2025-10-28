@@ -49,30 +49,30 @@
     <section class="space-y-8">
         <div>
             <div class="flex gap-4 overflow-x-auto pb-2">
-            <?php foreach ($courses as $course): ?>
+            <?php foreach ($content_items as $content_item): ?>
                 <article class="min-w-[220px] bg-white rounded-xl shadow-sm overflow-hidden">
                     <div class="relative">
                         <img
-                            src="<?= $course["thumbnail"] ?>"
+                            src="<?= $content_item["thumbnail"] ?>"
                             alt="Título do curso"
                             class="w-full h-36 object-cover"
                         />
                         <div
                             class="absolute top-2 left-2 flex items-center gap-2 bg-white/80 rounded-full px-2 py-1 text-xs"
                         >
-                            <span class="text-gray-700"><?= $course["source"] ?></span>
+                            <span class="text-gray-700"><?= $content_item["source"] ?></span>
                         </div>
                     </div>
 
                     <div class="p-3">
                         <h3 class="text-sm font-semibold text-gray-800 line-clamp-2">
-                            <a href="/course_detail.php?id=<?= $course[
+                            <a href="/cont$content_item_detail.php?id=<?= $content_item[
                                 "id"
-                            ] ?>" class="text-gray-800"><?= $course["title"] ?></a>
+                            ] ?>" class="text-gray-800"><?= $content_item["title"] ?></a>
                         </h3>
                         <div class="mt-2 flex items-center justify-between">
                             <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
-                                ><?= $course["tag"] ?></span
+                                ><?= $content_item["tag"] ?></span
                             >
                             <span class="text-xs text-gray-500">40%</span>
                         </div>
