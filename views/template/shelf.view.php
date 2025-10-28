@@ -60,7 +60,7 @@
                         <div
                             class="absolute top-2 left-2 flex items-center gap-2 bg-white/80 rounded-full px-2 py-1 text-xs"
                         >
-                            <span class="text-gray-700"><?= $course["platform"] ?></span>
+                            <span class="text-gray-700"><?= $course["source"] ?></span>
                         </div>
                     </div>
 
@@ -74,14 +74,12 @@
                             <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
                                 ><?= $course["tag"] ?></span
                             >
-                            <span class="text-xs text-gray-500"><?= $course["progress"] ?>%</span>
+                            <span class="text-xs text-gray-500">40%</span>
                         </div>
 
                         <div class="mt-3">
                             <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                <div class="h-2 bg-indigo-500 rounded-full" style="width: <?= $course[
-                                    "progress"
-                                ] ?>%"></div>
+                                <div class="h-2 bg-indigo-500 rounded-full" style="width:40%"></div>
                             </div>
                         </div>
 
