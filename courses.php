@@ -71,5 +71,3 @@ $courses = $query->fetchAll();
 //         "progress" => 20,
 //     ],
 // ];
-
-?>
