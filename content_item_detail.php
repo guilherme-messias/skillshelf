@@ -1,7 +1,6 @@
 <?php
+require "database.php";
 
-$controller = "course_detail";
+$controller = "content_item_detail";
 
 require "controllers/" . $controller . ".controller.php";
-
-?>

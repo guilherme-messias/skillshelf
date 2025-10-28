@@ -66,7 +66,7 @@
 
                     <div class="p-3">
                         <h3 class="text-sm font-semibold text-gray-800 line-clamp-2">
-                            <a href="/cont$content_item_detail.php?id=<?= $content_item[
+                            <a href="/content_item_detail.php?id=<?= $content_item[
                                 "id"
                             ] ?>" class="text-gray-800"><?= $content_item["title"] ?></a>
                         </h3>
