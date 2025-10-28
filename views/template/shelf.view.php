@@ -72,7 +72,7 @@
                         </h3>
                         <div class="mt-2 flex items-center justify-between">
                             <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
-                                ><?= $content_item["tag"] ?></span
+                                ><?= $content_item["source"] ?></span
                             >
                             <span class="text-xs text-gray-500">40%</span>
                         </div>
