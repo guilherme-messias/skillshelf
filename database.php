@@ -7,6 +7,16 @@ class DB {
         $query = $database->query("SELECT * FROM content_items");
         $content_items = $query->fetchAll();
 
+        foreach ($content_items as $content_item) {
+            $content_item = new Content_item(
+                $content_item["id"],
+                $content_item["source"],
+                $content_item['$content_type'],
+                $content_item["url"],
+                $content_item["title"],
+            );
+        }
+
         return $content_items;
     }
 }
