@@ -13,13 +13,7 @@ class DB {
 
         $return = [];
         foreach ($content_items as $item) {
-            $content_item = new Content_item();
-            $content_item->id = $item["id"];
-            $content_item->source = $item["source"];
-            $content_item->content_type = $item["content_type"];
-            $content_item->url = $item["url"];
-            $content_item->title = $item["title"];
-            $return[] = $content_item;
+            $return[] = Content_item::from_array($item);
         }
 
         return $return;
@@ -30,16 +24,7 @@ class DB {
         $item = $query->fetch(PDO::FETCH_ASSOC);
 
         $return = [];
-
-        $content_item = new Content_item();
-        $content_item->id = $item["id"];
-        $content_item->source = $item["source"];
-        $content_item->content_type = $item["content_type"];
-        $content_item->url = $item["url"];
-        $content_item->title = $item["title"];
-        $return = $content_item;
-
-        return $return;
+        return Content_item::from_array($item);
     }
 }
 
