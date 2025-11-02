@@ -1,10 +1,14 @@
 <?php
 
 class DB {
-    public function content_items() {
-        $database = new PDO("sqlite:courses.sqlite");
+    private $db;
 
-        $query = $database->query("SELECT * FROM content_items");
+    public function __construct() {
+        $this->db = new PDO("sqlite:courses.sqlite");
+    }
+
+    public function content_items() {
+        $query = $this->db->query("SELECT * FROM content_items");
         $content_items = $query->fetchAll();
 
         $return = [];
@@ -22,9 +26,7 @@ class DB {
     }
 
     public function content_item($id) {
-        $database = new PDO("sqlite:courses.sqlite");
-
-        $query = $database->query("SELECT * FROM content_items WHERE id = $id");
+        $query = $this->db->query("SELECT * FROM content_items WHERE id = $id");
         $item = $query->fetch(PDO::FETCH_ASSOC);
 
         $return = [];
