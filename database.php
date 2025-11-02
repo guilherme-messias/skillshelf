@@ -35,8 +35,8 @@ class DB {
         $content_item->content_type = $item["content_type"];
         $content_item->url = $item["url"];
         $content_item->title = $item["title"];
-        $return[] = $content_item;
-        
+        $return = $content_item;
+
         return $return;
     }
 }
