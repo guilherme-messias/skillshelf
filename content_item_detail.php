@@ -1,4 +1,5 @@
 <?php
+require "models/Content_item.php";
 require "database.php";
 
 $controller = "content_item_detail";

@@ -20,6 +20,26 @@ class DB {
 
         return $return;
     }
+
+    public function content_item($id) {
+        $database = new PDO("sqlite:courses.sqlite");
+
+        $query = $database->query("SELECT * FROM content_items WHERE id = $id");
+        $content_item = $query->fetch(PDO::FETCH_ASSOC);
+
+        $return = [];
+
+        $content_item = new Content_item();
+        var_dump($content_item);
+        // $content_item->id = $content_item["id"];
+        // $content_item->source = $content_item["source"];
+        // $content_item->content_type = $content_item["content_type"];
+        // $content_item->url = $content_item["url"];
+        // $content_item->title = $content_item["title"];
+        // $return[] = $content_item;
+
+        // return $return;
+    }
 }
 
 // $courses = [
