@@ -1,6 +1,8 @@
 <?php
 $db = new DB();
-$content_items = $db->content_items();
+
+$search = $_REQUEST["search"] ?? "";
+$content_items = $db->content_items($search);
 
 $view = "shelf";
 
