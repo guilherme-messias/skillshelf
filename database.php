@@ -7,22 +7,14 @@ class DB {
         $this->db = new PDO("sqlite:courses.sqlite");
     }
 
-    public function content_items($item_search = "") {
-            $stmt = $this->db->prepare("SELECT * FROM content_items WHERE title LIKE :search OR source LIKE :search");
-            $stmt->bindValue(":search", "%$item_search%", PDO::PARAM_STR);
-            $stmt->setFetchMode(PDO::FETCH_CLASS, ("Content_item")::class);
-            $stmt->execute();
+    public function query($query, $class = null, $params = []) {
+        $stmt = $this->db->prepare($query);
 
-            return $stmt->fetchAll();
-    }
-
-    public function content_item($id) {
-        $stmt = $this->db->prepare("SELECT * FROM content_items WHERE id = :id");
-        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, ("Content_item")::class);
-        $stmt->execute();
-        
-        return $stmt->fetch();
+        if ($class) {
+            $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        }
+        $stmt->execute($params);
+        return $stmt;
     }
 }
 
