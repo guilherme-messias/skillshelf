@@ -8,30 +8,21 @@ class DB {
     }
 
     public function content_items($item_search = "") {
-        if ($item_search) {
             $stmt = $this->db->prepare("SELECT * FROM content_items WHERE title LIKE :search OR source LIKE :search");
             $stmt->bindValue(":search", "%$item_search%", PDO::PARAM_STR);
+            $stmt->setFetchMode(PDO::FETCH_CLASS, ("Content_item")::class);
             $stmt->execute();
-            $content_items = $stmt->fetchAll();
-        } else {
-            $query = $this->db->query("SELECT * FROM content_items");
-            $content_items = $query->fetchAll();
-        }
 
-        $return = [];
-        foreach ($content_items as $item) {
-            $return[] = Content_item::from_array($item);
-        }
-
-        return $return;
+            return $stmt->fetchAll();
     }
 
     public function content_item($id) {
-        $query = $this->db->query("SELECT * FROM content_items WHERE id = $id");
-        $item = $query->fetch(PDO::FETCH_ASSOC);
-
-        $return = [];
-        return Content_item::from_array($item);
+        $stmt = $this->db->prepare("SELECT * FROM content_items WHERE id = :id");
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, ("Content_item")::class);
+        $stmt->execute();
+        
+        return $stmt->fetch();
     }
 }
 
