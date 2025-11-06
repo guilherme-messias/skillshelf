@@ -1,7 +1,7 @@
 <?php
-$id = $_GET["id"] ?? 1;
+$id = $_GET["id"];
 
-$content_item = (new DB())
+$content_item = $database
     ->query("SELECT * FROM content_items WHERE id = :id", "Content_item", [
         ":id" => $id,
     ])

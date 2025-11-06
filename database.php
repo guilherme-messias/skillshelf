@@ -3,8 +3,8 @@
 class DB {
     private $db;
 
-    public function __construct() {
-        $this->db = new PDO("sqlite:courses.sqlite");
+    public function __construct($config) {
+        $this->db = new PDO($config["driver"] . ":" . $config["database"]);
     }
 
     public function query($query, $class = null, $params = []) {
@@ -17,6 +17,8 @@ class DB {
         return $stmt;
     }
 }
+
+$database = new DB($config["database"]);
 
 // $courses = [
 //     [
