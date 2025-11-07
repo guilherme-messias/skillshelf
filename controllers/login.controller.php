@@ -1,5 +1,5 @@
 <?php
 
-$view = "index";
+$view = "login";
 
 require "views/template/app/app.php";
