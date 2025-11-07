@@ -43,6 +43,12 @@
                     </form>
                 </div>
 
+                <div class="flex items-center justify-center max-w-lg">
+                    <?php if ($message): ?>
+                        <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
+                    <?php endif; ?>
+                </div>
+
                 <div class="flex items-center justify-center bg-gray-50 p-6">
                     <form id="form-register" action="/register" method="POST" class="space-y-4 w-full">
                         <h2 class="text-lg font-semibold text-gray-800">Registrar</h2>
