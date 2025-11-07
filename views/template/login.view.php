@@ -46,7 +46,7 @@
                         <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
                     <?php endif; ?>
 
-                    <?php if (isset($_SESSION["validationErrors"])): ?>
+                    <?php if (isset($_SESSION["validationErrors"]) && !$message): ?>
                         <p class="text-lg font-bold text-red-600">Por favor, corrija os seguintes erros:</p>
                         <ul class="text-sm font-bold text-red-600">
                             <?php foreach ($_SESSION["validationErrors"] as $error): ?>
