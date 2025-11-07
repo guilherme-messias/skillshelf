@@ -41,12 +41,13 @@
                     </form>
                 </div>
 
-                <div class="flex items-center justify-center max-w-lg">
+                <div class="grid place-content-center max-w-lg">
                     <?php if ($message): ?>
                         <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
                     <?php endif; ?>
 
                     <?php if (isset($_SESSION["validationErrors"])): ?>
+                        <p class="text-lg font-bold text-red-600">Por favor, corrija os seguintes erros:</p>
                         <ul class="text-sm font-bold text-red-600">
                             <?php foreach ($_SESSION["validationErrors"] as $error): ?>
                                 <li><?= htmlspecialchars($error) ?></li>
