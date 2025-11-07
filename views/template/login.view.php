@@ -42,7 +42,7 @@
                     </form>
                 </div>
                 <div class="flex items-center justify-center bg-gray-50 p-6">
-                    <form id="form-register" action="#" method="#" class="space-y-4">
+                    <form id="form-register" action="/register" method="POST" class="space-y-4">
                         <h2 class="text-lg font-semibold text-gray-800">Registrar</h2>
                         <div>
                             <label for="reg-name" class="block text-sm text-gray-600">Nome</label>
@@ -77,6 +77,21 @@
                                     class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
+
+                            <div>
+                                <label for="reg-avatar" class="block text-sm text-gray-600">Avatar URL</label>
+                                <input
+                                    id="reg-avatar"
+                                    name="avatar"
+                                    type="text"
+                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                                />
+                            </div>
+
+                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                                />
+                            </div>
+
                             <div>
                                 <label for="reg-password-confirm" class="block text-sm text-gray-600">Confirmar</label>
                                 <input
