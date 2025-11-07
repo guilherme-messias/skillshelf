@@ -16,7 +16,6 @@
                                 id="login-email"
                                 name="email"
                                 type="email"
-                                required
                                 class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                             />
                         </div>
@@ -27,7 +26,6 @@
                                 id="login-password"
                                 name="password"
                                 type="password"
-                                required
                                 class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                             />
                         </div>
@@ -47,6 +45,14 @@
                     <?php if ($message): ?>
                         <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
                     <?php endif; ?>
+
+                    <?php if (isset($_SESSION["validationErrors"])): ?>
+                        <ul class="text-sm font-bold text-red-600">
+                            <?php foreach ($_SESSION["validationErrors"] as $error): ?>
+                                <li><?= htmlspecialchars($error) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
 
                 <div class="flex items-center justify-center bg-gray-50 p-6">
@@ -59,7 +65,6 @@
                                 id="reg-name"
                                 name="name"
                                 type="text"
-                                required
                                 class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                             />
                         </div>
@@ -70,7 +75,6 @@
                                 id="reg-email"
                                 name="email"
                                 type="email"
-                                required
                                 class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                             />
                         </div>
@@ -82,7 +86,6 @@
                                     id="reg-password"
                                     name="password"
                                     type="password"
-                                    required
                                     class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
@@ -93,7 +96,6 @@
                                     id="reg-password-confirm"
                                     name="password_confirm"
                                     type="password"
-                                    required
                                     class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                                 />
                             </div>
