@@ -9,6 +9,7 @@
                 <div class="p-6">
                     <form id="form-login" action="#" method="#" class="space-y-4">
                         <h2 class="text-lg font-semibold text-gray-800">Login</h2>
+
                         <div>
                             <label for="login-email" class="block text-sm text-gray-600">Email</label>
                             <input
@@ -41,9 +42,11 @@
                         </div>
                     </form>
                 </div>
+
                 <div class="flex items-center justify-center bg-gray-50 p-6">
-                    <form id="form-register" action="/register" method="POST" class="space-y-4">
+                    <form id="form-register" action="/register" method="POST" class="space-y-4 w-full">
                         <h2 class="text-lg font-semibold text-gray-800">Registrar</h2>
+
                         <div>
                             <label for="reg-name" class="block text-sm text-gray-600">Nome</label>
                             <input
@@ -79,20 +82,6 @@
                             </div>
 
                             <div>
-                                <label for="reg-avatar" class="block text-sm text-gray-600">Avatar URL</label>
-                                <input
-                                    id="reg-avatar"
-                                    name="avatar"
-                                    type="text"
-                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                                />
-                            </div>
-
-                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                                />
-                            </div>
-
-                            <div>
                                 <label for="reg-password-confirm" class="block text-sm text-gray-600">Confirmar</label>
                                 <input
                                     id="reg-password-confirm"
@@ -105,6 +94,16 @@
                         </div>
 
                         <div>
+                            <label for="reg-avatar" class="block text-sm text-gray-600">Avatar URL</label>
+                            <input
+                                id="reg-avatar"
+                                name="avatar"
+                                type="text"
+                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                            />
+                        </div>
+
+                        <div>
                             <button
                                 type="submit"
                                 class="w-full px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
@@ -114,6 +113,7 @@
                         </div>
                     </form>
                 </div>
+
                 <p class="mt-4 text-xs text-center text-gray-500">Ao continuar, você concorda com os termos de uso.</p>
             </div>
         </div>

@@ -11,4 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "avatar" => $_POST["avatar"],
         ],
     );
+
+    header("Location: /login?message=registrado com sucesso!");
+    exit();
 }
