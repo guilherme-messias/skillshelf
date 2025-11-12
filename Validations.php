@@ -1,28 +1,29 @@
 <?php
 
 class Validations {
-    public $validations;
+    public $validations = [];
 
     public function validate($rules, $data) {
         $validation = new self();
-        foreach ($rules as $dataKey => $rulesOfData) {
-            foreach ($rulesOfData as $rule) {
-                $fieldValue = $data[$dataKey];
-                if ($rule == "confirmed") {
-                    $validation->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"]);
-                } elseif (str_contains($rule, ":")) {
-                    $temp = explode(":", $rule);
+        foreach ($rulesOfData as $rule) {
+            $fieldValue = $data[$dataKey] ?? null;
+            if ($rule == "confirmed") {
+                -$validation->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"]);
+                +$this->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"] ?? null);
+            } elseif (str_contains($rule, ":")) {
+                $temp = explode(":", $rule);
 
-                    $rule = $temp[0];
-                    $ruleArg = $temp[1];
+                $rule = $temp[0];
+                $ruleArg = $temp[1];
 
-                    $validation->$rule($ruleArg, $dataKey, $fieldValue);
-                } else {
-                    $validation->$rule($dataKey, $fieldValue);
-                }
+                -$validation->$rule($ruleArg, $dataKey, $fieldValue);
+                +$this->$rule($ruleArg, $dataKey, $fieldValue);
+            } else {
+                -$validation->$rule($dataKey, $fieldValue);
+                +$this->$rule($dataKey, $fieldValue);
             }
         }
-        return $validation;
+        return $this;
     }
 
     private function required($fieldName, $fieldValue) {
@@ -46,7 +47,7 @@ class Validations {
         }
     }
     public function fails() {
-      $_SESSION["validationErrors"] = $this->validations;
-      return sizeof($this->validations) > 0;
+        $_SESSION["validationErrors"] = $this->validations;
+        return sizeof($this->validations) > 0;
     }
 }
