@@ -4,23 +4,19 @@ class Validations {
     public $validations = [];
 
     public function validate($rules, $data) {
-        $validation = new self();
-        foreach ($rulesOfData as $rule) {
-            $fieldValue = $data[$dataKey] ?? null;
-            if ($rule == "confirmed") {
-                -$validation->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"]);
-                +$this->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"] ?? null);
-            } elseif (str_contains($rule, ":")) {
-                $temp = explode(":", $rule);
-
-                $rule = $temp[0];
-                $ruleArg = $temp[1];
-
-                -$validation->$rule($ruleArg, $dataKey, $fieldValue);
-                +$this->$rule($ruleArg, $dataKey, $fieldValue);
-            } else {
-                -$validation->$rule($dataKey, $fieldValue);
-                +$this->$rule($dataKey, $fieldValue);
+        foreach ($rules as $dataKey => $rulesOfData) {
+            foreach ($rulesOfData as $rule) {
+                $fieldValue = $data[$dataKey] ?? null;
+                if ($rule == "confirmed") {
+                    $this->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"] ?? null);
+                } elseif (str_contains($rule, ":")) {
+                    $temp = explode(":", $rule);
+                    $rule = $temp[0];
+                    $ruleArg = $temp[1];
+                    $this->$rule($ruleArg, $dataKey, $fieldValue);
+                } else {
+                    $this->$rule($dataKey, $fieldValue);
+                }
             }
         }
         return $this;
