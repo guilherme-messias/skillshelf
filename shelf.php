@@ -1,6 +1,6 @@
 <?php
 require "models/Content_item.php";
-require "database.php";
+require "Database.php";
 
 $controller = "shelf";
 
