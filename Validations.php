@@ -8,7 +8,7 @@ class Validations {
             foreach ($rulesOfData as $rule) {
                 $fieldValue = $data[$dataKey] ?? null;
                 if ($rule == "confirmed") {
-                    $this->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirmation"] ?? null);
+                    $this->$rule($dataKey, $fieldValue, $data["{$dataKey}_confirm"] ?? null);
                 } elseif (str_contains($rule, ":")) {
                     $temp = explode(":", $rule);
                     $rule = $temp[0];
