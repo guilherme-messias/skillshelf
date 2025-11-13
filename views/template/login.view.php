@@ -7,8 +7,14 @@
                 </div>
 
                 <div class="p-6">
-                    <form id="form-login" action="#" method="#" class="space-y-4">
+                    <form id="form-login" action="/login" method="POST" class="space-y-4">
                         <h2 class="text-lg font-semibold text-gray-800">Login</h2>
+
+                        <?php if (isset($_SESSION["loginError"])): ?>
+                            <p class="text-sm font-bold text-green-600"><?= htmlspecialchars(
+                                $_SESSION["loginError"],
+                            ) ?></p>
+                        <?php endif; ?>
 
                         <div>
                             <label for="login-email" class="block text-sm text-gray-600">Email</label>
