@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   $user = $database->query(
     "SELECT * FROM users WHERE email = :email AND password = :password",
-    null,
+    "User",
     [
       "email" => $email,
       "password" => $password,

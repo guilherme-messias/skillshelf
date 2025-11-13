@@ -11,7 +11,7 @@
                 <div>
                   <p class="text-sm text-gray-500">Olá,</p>
                   <p class="text-lg font-semibold text-gray-800"><?= htmlspecialchars(
-                      $_SESSION["user"]["name"],
+                      $_SESSION["user"]->name,
                   ) ?> <span>👋</span></p>
                 </div>
                 <?php endif; ?>
