@@ -11,7 +11,7 @@
                         <h2 class="text-lg font-semibold text-gray-800">Login</h2>
 
                         <?php if (isset($_SESSION["loginError"])): ?>
-                            <p class="text-sm font-bold text-green-600"><?= htmlspecialchars(
+                            <p class="text-sm font-bold text-red-600"><?= htmlspecialchars(
                                 $_SESSION["loginError"],
                             ) ?></p>
                         <?php endif; ?>

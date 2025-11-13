@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   $user = $database->query(
     "SELECT * FROM users WHERE email = :email AND password = :password",
-    true,
+    null,
     [
       "email" => $email,
       "password" => $password,
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   if ($user) {
     $_SESSION["user"] = $user;
-    header("Location: /dashboard");
+    header("Location: /index");
     exit();
   } else {
     $_SESSION["loginError"] = "Email ou senha inválidos.";
