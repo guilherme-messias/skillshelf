@@ -15,7 +15,8 @@
                   ) ?> <span>👋</span></p>
                 </div>
                 <?php endif; ?>
-            </div>
+              </div>
+              <a class="text-sm text-indigo-600 hover:underline" href="/logout">Logout</a>
         </header>
 
         <div class="mb-6">
