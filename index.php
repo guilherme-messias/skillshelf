@@ -5,5 +5,6 @@ require "models/User.php";
 session_start();
 
 $config = require "config.php";
+require "Flash.php";
 require "Database.php";
 require "routes.php";
