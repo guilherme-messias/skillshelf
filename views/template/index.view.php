@@ -7,11 +7,11 @@
                     alt="perfil"
                     class="w-12 h-12 rounded-full ring-2 ring-indigo-500"
                 />
-                <?php if (isset($_SESSION["user"])): ?>
+                <?php if ($user = (new Flash())->get("user")): ?>
                 <div>
                   <p class="text-sm text-gray-500">Olá,</p>
                   <p class="text-lg font-semibold text-gray-800"><?= htmlspecialchars(
-                      $_SESSION["user"]->name,
+                      $user->name,
                   ) ?> <span>👋</span></p>
                 </div>
                 <?php endif; ?>

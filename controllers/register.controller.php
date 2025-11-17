@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ],
     );
 
-    header("Location: /login?message=registrado com sucesso!");
+    (new Flash())->push("message", "Registrado com sucesso!");
+
+    header("Location: /login");
     exit();
 }

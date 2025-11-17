@@ -43,7 +43,7 @@ class Validations {
         }
     }
     public function fails() {
-        $_SESSION["validationErrors"] = $this->validations;
+        (new Flash())->push("validationErrors", $this->validations);
         return sizeof($this->validations) > 0;
     }
 }
