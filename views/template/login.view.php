@@ -10,9 +10,9 @@
                     <form id="form-login" action="/login" method="POST" class="space-y-4">
                         <h2 class="text-lg font-semibold text-gray-800">Login</h2>
 
-                        <?php if (isset($_SESSION["loginError"])): ?>
+                        <?php if ($loginError = (new Flash())->get("loginError")): ?>
                             <p class="text-sm font-bold text-red-600"><?= htmlspecialchars(
-                                $_SESSION["loginError"],
+                                $loginError,
                             ) ?></p>
                         <?php endif; ?>
 
@@ -22,8 +22,7 @@
                                 id="login-email"
                                 name="email"
                                 type="email"
-                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                            />
+                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                         </div>
 
                         <div>
@@ -32,15 +31,13 @@
                                 id="login-password"
                                 name="password"
                                 type="password"
-                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                            />
+                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                         </div>
 
                         <div>
                             <button
                                 type="submit"
-                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
-                            >
+                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
                                 Entrar
                             </button>
                         </div>
@@ -48,14 +45,14 @@
                 </div>
 
                 <div class="grid place-content-center max-w-lg">
-                    <?php if ($message): ?>
+                    <?php if ($message = (new Flash())->get("message")): ?>
                         <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
                     <?php endif; ?>
 
-                    <?php if (isset($_SESSION["validationErrors"]) && !$message): ?>
+                    <?php if ( $validationErrors = (new Flash()) -> get("validationErrors")): ?>
                         <p class="text-lg font-bold text-red-600">Por favor, corrija os seguintes erros:</p>
                         <ul class="text-sm font-bold text-red-600">
-                            <?php foreach ($_SESSION["validationErrors"] as $error): ?>
+                            <?php foreach ($validationErrors as $error): ?>
                                 <li><?= htmlspecialchars($error) ?></li>
                             <?php endforeach; ?>
                         </ul>
@@ -72,8 +69,7 @@
                                 id="reg-name"
                                 name="name"
                                 type="text"
-                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                            />
+                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                         </div>
 
                         <div>
@@ -82,8 +78,7 @@
                                 id="reg-email"
                                 name="email"
                                 type="email"
-                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                            />
+                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
@@ -93,8 +88,7 @@
                                     id="reg-password"
                                     name="password"
                                     type="password"
-                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                                />
+                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                             </div>
 
                             <div>
@@ -103,8 +97,7 @@
                                     id="reg-password-confirm"
                                     name="password_confirm"
                                     type="password"
-                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                                />
+                                    class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                             </div>
                         </div>
 
@@ -114,15 +107,13 @@
                                 id="reg-avatar"
                                 name="avatar"
                                 type="text"
-                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                            />
+                                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
                         </div>
 
                         <div>
                             <button
                                 type="submit"
-                                class="w-full px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
-                            >
+                                class="w-full px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700">
                                 Criar conta
                             </button>
                         </div>
