@@ -21,9 +21,35 @@
     <div class="space-y-4">
       <div class="flex items-center justify-between">
         <div class="flex gap-2">
-          <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-md text-sm">Editar informações</button>
+          <form action="/user-item-notes" method="POST" class="space-y-3 w-full">
+            <input type="hidden" name="content_item_id" value="<?= $content_item->id ?>" />
+
+            <div>
+              <label for="note-title" class="block text-sm text-gray-600">Título da Nota</label>
+              <input
+                id="note-title"
+                name="note_title"
+                type="text"
+                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Digite o título da nota" />
+            </div>
+
+            <div>
+              <label for="note-body" class="block text-sm text-gray-600">Corpo da Nota</label>
+              <textarea
+                id="note-body"
+                name="note_body"
+                rows="4"
+                class="mt-1 w-full px-3 py-2 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Escreva sua nota aqui..."></textarea>
+            </div>
+
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-md text-sm">
+              Ver Notas
+            </button>
+          </form>
         </div>
       </div>
     </div>
-  </header>
+    </header>
 </main>
