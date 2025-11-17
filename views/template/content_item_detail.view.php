@@ -21,7 +21,7 @@
     <div class="space-y-4">
       <div class="flex items-center justify-between">
         <div class="flex gap-2">
-          <form action="/user-item-notes" method="POST" class="space-y-3 w-full">
+          <form action="/user_item_notes" method="POST" class="space-y-3 w-full">
             <input type="hidden" name="content_item_id" value="<?= $content_item->id ?>" />
 
             <div>
@@ -35,7 +35,7 @@
             </div>
 
             <div>
-              <label for="note-body" class="block text-sm text-gray-600">Corpo da Nota</label>
+              <label for="note-body" class="block text-sm text-gray-600">Nota</label>
               <textarea
                 id="note-body"
                 name="note_body"
@@ -45,7 +45,7 @@
             </div>
 
             <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-md text-sm">
-              Ver Notas
+              Salvar
             </button>
           </form>
         </div>
