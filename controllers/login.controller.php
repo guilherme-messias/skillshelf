@@ -4,16 +4,15 @@ $view = "login";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"] ?? "";
-    $password = $_POST["password"] ?? "";
+    $rawPassword = $_POST["password"] ?? "";
 
     $user = $database
-        ->query("SELECT * FROM users WHERE email = :email AND password = :password", "User", [
+        ->query("SELECT * FROM users WHERE email = :email", "User", [
             "email" => $email,
-            "password" => $password,
         ])
         ->fetch();
 
-    if ($user) {
+    if ($user && password_verify($rawPassword, $user->password)) {
         (new Flash())->push("user", $user);
         header("Location: /index");
         exit();
