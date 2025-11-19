@@ -1,5 +1,7 @@
 <?php
 
+require "Validations.php";
+
 if (!($_SERVER["REQUEST_METHOD"] === "POST")) {
     header("Location: /login");
     exit();
@@ -24,9 +26,10 @@ if ($validation->fails()) {
 }
 
 $database->query(
-    "INSERT INTO user_item_notes (user_id, user_item_id, title, body) VALUES (:user_id, :content_item_id, :note_title, :note_body)",
-    null,
-    [
+    $query =
+        "INSERT INTO user_item_notes (user_id, user_item_id, title, body) VALUES (:user_id, :content_item_id, :note_title, :note_body)",
+    $class = null,
+    $params = [
         "user_id" => $_SESSION["user"]->id,
         "content_item_id" => $content_item_id,
         "note_title" => $note_title,
