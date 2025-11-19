@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $view = "login";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -13,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ->fetch();
 
     if ($user && password_verify($rawPassword, $user->password)) {
-        (new Flash())->push("user", $user);
+        $_SESSION["user"] = $user;
+        // (new Flash())->push("user", $user);
         header("Location: /index");
         exit();
     } else {
@@ -24,3 +27,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 require "views/template/app/app.php";
+

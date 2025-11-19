@@ -1,4 +1,5 @@
-<?php requireAuth(); ?>
+<?php var_dump($_SESSION["user"]); ?>
+
 
 <main class="max-w-5xl mx-auto p-4 md:p-8">
   <header class="bg-white rounded-xl shadow overflow-hidden mb-6">

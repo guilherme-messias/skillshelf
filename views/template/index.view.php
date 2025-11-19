@@ -7,7 +7,7 @@
                     alt="perfil"
                     class="w-12 h-12 rounded-full ring-2 ring-indigo-500"
                 />
-                <?php if ($user = (new Flash())->get("user")): ?>
+                <?php if ($user = $_SESSION["user"]): ?>
                 <div>
                   <p class="text-sm text-gray-500">Olá,</p>
                   <p class="text-lg font-semibold text-gray-800"><?= htmlspecialchars(

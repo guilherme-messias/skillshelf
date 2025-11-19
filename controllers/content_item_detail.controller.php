@@ -1,7 +1,5 @@
 <?php
 
-require "functions.php";
-
 $id = $_GET["id"];
 
 $content_item = $database
