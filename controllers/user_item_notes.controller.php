@@ -3,7 +3,7 @@
 require "Validations.php";
 
 if (!($_SERVER["REQUEST_METHOD"] === "POST")) {
-    header("Location: /login");
+    header("Location: /content_item_detail.php?id=" . $_POST["content_item_id"]);
     exit();
 }
 
