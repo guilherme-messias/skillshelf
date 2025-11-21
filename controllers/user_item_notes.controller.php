@@ -39,5 +39,5 @@ $database->query(
 
 (new Flash())->push("message", "Nota criada com sucesso!");
 
-header("Location: /login");
+header("Location: /content_item_detail.php?id=" . $content_item_id);
 exit();
