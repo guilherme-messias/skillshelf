@@ -1,5 +1,6 @@
 <?php
 require "models/Content_item.php";
+require "models/User.php";
 $config = require "config.php";
 require "Database.php";
 require "functions.php";
