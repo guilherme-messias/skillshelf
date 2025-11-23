@@ -21,7 +21,7 @@ $validation->validate(
 );
 
 if ($validation->fails()) {
-    header("Location: /login");
+    header("Location: /content_item_detail.php?id=" . $content_item_id);
     exit();
 }
 

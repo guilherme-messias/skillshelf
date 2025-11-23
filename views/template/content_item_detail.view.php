@@ -25,16 +25,16 @@
       <div class="flex items-center justify-between">
         <div class="flex gap-2">
 
-          <?php if ($message = (new Flash())->get("message")): ?>
-            <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
-          <?php endif; ?>
-
-          <?php if ($validationErrors = (new Flash())->get("validationErrors")): ?>
-            <p class="text-lg font-bold text-red-600">Erro ao realizar criação da nota.</p>
-          <?php endif; ?>
 
 
           <form action="/user_item_notes" method="POST" class="space-y-3 w-full">
+            <?php if ($message = (new Flash())->get("message")): ?>
+              <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
+            <?php endif; ?>
+
+            <?php if ($validationErrors = (new Flash())->get("validationErrors")): ?>
+              <p class="text-sm font-bold text-red-600">Erro ao realizar criação da nota.</p>
+            <?php endif; ?>
             <input type="hidden" name="content_item_id" value="<?= $content_item->id ?>" />
 
             <div>
