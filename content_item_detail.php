@@ -3,6 +3,7 @@ require "models/Content_item.php";
 require "models/User.php";
 $config = require "config.php";
 require "Database.php";
+require "Flash.php";
 require "functions.php";
 
 $controller = "content_item_detail";
