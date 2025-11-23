@@ -61,6 +61,21 @@
               Salvar
             </button>
           </form>
+
+          <div class="mt-6">
+            <h2 class="text-lg font-bold mb-4">Notas do Usuário</h2>
+            <?php if (empty($notes)): ?>
+              <p class="text-sm text-gray-600">Nenhuma nota disponível para este item.</p>
+            <?php else: ?>
+              <ul class="space-y-4">
+                <?php foreach ($notes as $note): ?>
+                  <li class="border p-4 rounded-md bg-gray-50">
+                    <h3 class="text-md font-semibold mb-2"><?= htmlspecialchars($note->title) ?></h3>
+                    <p class="text-sm text-gray-700"><?= nl2br(htmlspecialchars($note->body)) ?></p>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>
         </div>
       </div>
     </div>

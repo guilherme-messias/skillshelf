@@ -1,6 +1,8 @@
 <?php
 require "models/Content_item.php";
 require "models/User.php";
+require "models/User_item_note.php";
+
 $config = require "config.php";
 require "Database.php";
 require "Flash.php";
