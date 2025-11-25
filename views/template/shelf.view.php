@@ -17,8 +17,7 @@
                     type="text"
                     name="search"
                     placeholder="Buscar cursos, tags..."
-                    class="ml-2 w-44 text-sm bg-transparent outline-none"
-                />
+                    class="ml-2 w-44 text-sm bg-transparent outline-none" />
                 <button type="submit" class="ml-2 text-sm text-indigo-600">Buscar</button>
             </form>
         </div>
@@ -41,6 +40,10 @@
 
     <section class="space-y-8">
         <div>
+            <?php if ($message = (new Flash())->get("message")): ?>
+                <p class="text-sm font-bold text-green-600 p-4"> <?= htmlspecialchars($message) ?></p>
+            <?php endif; ?>
+
             <div class="flex gap-4 overflow-x-auto pb-2">
                 <?php foreach ($content_items as $content_item): ?>
                     <article class="min-w-[220px] bg-white rounded-xl shadow-sm overflow-hidden">
@@ -48,8 +51,7 @@
                             <img
                                 src="<?= $content_item->url ?>"
                                 alt="Título do curso"
-                                class="w-full h-36 object-cover"
-                            />
+                                class="w-full h-36 object-cover" />
                             <div class="absolute top-2 left-2 flex items-center gap-2 bg-white/80 rounded-full px-2 py-1 text-xs">
                                 <span class="text-gray-700"><?= $content_item->source ?></span>
                             </div>

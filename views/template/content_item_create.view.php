@@ -2,9 +2,7 @@
   <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
     <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">Cadastrar Novo Conteúdo</h2>
     <form action="content_item_create" method="POST" class="space-y-4">
-      <?php if ($message = (new Flash())->get("message")): ?>
-        <p class="text-sm font-bold text-green-600"><?= htmlspecialchars($message) ?></p>
-      <?php endif; ?>
+
 
       <?php if ($validationErrors = (new Flash())->get("validationErrors")): ?>
         <p class="text-sm font-bold text-red-600">Erro ao realizar criação da nota.</p>
