@@ -1,7 +1,9 @@
 <?php
+require "models/Content_item.php";
+require "models/User.php";
+$config = require "config.php";
 require "Database.php";
-require "Validations.php";
-require "/models/Content_item.php";
+require "Flash.php";
 
 $controller = "content_item_create";
 

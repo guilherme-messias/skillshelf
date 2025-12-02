@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user_id = $_POST["user_id"];
     $source = $_POST["source"];
     $content_type = $_POST["content_type"];
-    $url = $_POST["url"];
+    $file = $_FILES["file"];
     $title = $_POST["title"];
 
     $validation = new Validations();
@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         [
             "source" => ["required"],
             "content_type" => ["required"],
-            "url" => ["required"],
             "title" => ["required"],
         ],
         $_POST,
@@ -25,15 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
+    $upload_file = "uploads/" . $_FILES["file"]["name"];
+    move_uploaded_file($_FILES["file"]["tmp_name"], $upload_file);
+
     $database->query(
-        $query =
-            "INSERT INTO content_items (user_id, source, content_type, url, title) VALUES (:user_id, :source, :content_type, :url, :title)",
-        $class = null,
-        $params = [
+        "INSERT INTO content_items (user_id, source, content_type, url, title) VALUES (:user_id, :source, :content_type, :url, :title)",
+        null,
+        [
             "user_id" => $user_id,
             "source" => $source,
             "content_type" => $content_type,
-            "url" => $url,
+            "url" => $upload_file,
             "title" => $title,
         ],
     );
