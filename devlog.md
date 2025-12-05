@@ -1,0 +1,4 @@
+- 2025-12-05
+	- **Próximos passos:**
+    - Adicionar middleware de autenticação, protegendo rotas que necessitam do login do usuário.
+    - Corrigir que para todas as chamas da query, seja informado como segundo parâmetro o objeto de contexto e não null.
