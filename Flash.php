@@ -6,7 +6,7 @@ class Flash {
     }
 
     public static function get($key) {
-        if (!$_SESSION[$key]) {
+        if (!isset($_SESSION[$key])) {
             return false;
         }
 
