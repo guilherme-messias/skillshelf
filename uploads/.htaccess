@@ -1,0 +1,4 @@
+php_flag engine off
+
+Order allow,deny
+Deny from all

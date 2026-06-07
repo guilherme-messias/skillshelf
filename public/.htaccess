@@ -9,3 +9,5 @@ RedirectMatch 403 ^/functions.php$
 RedirectMatch 403 ^/routes.php$
 RedirectMatch 403 ^/shelf.php$
 RedirectMatch 403 ^/Validations.php$
+RedirectMatch 403 ^/.*\.sqlite$
+RedirectMatch 403 ^/.*\.sqbpro$

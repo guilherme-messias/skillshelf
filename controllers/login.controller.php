@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $view = "login";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

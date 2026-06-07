@@ -1,5 +1,7 @@
 <?php
 
+requireAuth();
+
 $search = $_REQUEST["search"] ?? "";
 $user_id = $_SESSION["user"]->id;
 

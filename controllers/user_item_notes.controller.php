@@ -1,5 +1,6 @@
 <?php
 
+requireAuth();
 require "Validations.php";
 
 if (!($_SERVER["REQUEST_METHOD"] === "POST")) {
@@ -10,6 +11,18 @@ if (!($_SERVER["REQUEST_METHOD"] === "POST")) {
 $content_item_id = $_POST["content_item_id"];
 $note_title = $_POST["note_title"];
 $note_body = $_POST["note_body"];
+
+$content_item = $database
+    ->query("SELECT * FROM content_items WHERE id = :id", "Content_item", [
+        ":id" => $content_item_id,
+    ])
+    ->fetch();
+
+if (!$content_item || $content_item->user_id !== $_SESSION["user"]->id) {
+    http_response_code(403);
+    echo "Acesso negado.";
+    exit();
+}
 
 $validation = new Validations();
 $validation->validate(
@@ -26,10 +39,9 @@ if ($validation->fails()) {
 }
 
 $database->query(
-    $query =
-        "INSERT INTO user_item_notes (user_id, user_item_id, title, body) VALUES (:user_id, :content_item_id, :note_title, :note_body)",
-    $class = null,
-    $params = [
+    "INSERT INTO user_item_notes (user_id, user_item_id, title, body) VALUES (:user_id, :content_item_id, :note_title, :note_body)",
+    null,
+    [
         "user_id" => $_SESSION["user"]->id,
         "content_item_id" => $content_item_id,
         "note_title" => $note_title,
